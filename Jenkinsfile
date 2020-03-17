@@ -1,8 +1,7 @@
-node{
+pipeline{
+    agent any
     stage('SCM Checkout'){
-        when {
-                branch 'dev'
-        }
+        git checkout 'Dev'
         git 'https://github.com/GuilleRdz/MAVEN-Project'
     }
     stage('Compile-Package'){
