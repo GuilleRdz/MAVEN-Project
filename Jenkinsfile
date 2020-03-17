@@ -2,7 +2,9 @@ pipeline{
     agent any
     stages{
         stage('Build'){
-            sh 'mvn package -DskipTests'
+            steps{
+                sh 'mvn package -DskipTests'
+            }
         }
         stage('Unit Test'){
             steps{
