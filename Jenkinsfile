@@ -19,7 +19,7 @@ pipeline{
                 branch 'Dev'
             }
             stage{
-                echo 'Delivery...
+                echo 'Delivery...'
             }
             
         }
