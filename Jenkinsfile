@@ -7,4 +7,7 @@ node{
     stage('Compile-Package'){
         sh 'mvn package -DskipTests'
     }
+    stage('Unit Test'){
+        sh 'mvn test'
+    }
 }
