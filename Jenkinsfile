@@ -1,10 +1,10 @@
 node{
     stage('SCM Checkout'){
         git branch: 'Dev',
-        credentialsId: 'mavn-pj',
+        credentialsId: 'maven-pj',
         url: 'https://github.com/GuilleRdz/MAVEN-Project'
     }
     stage('Compile-Package'){
-        sh 'mvn package'
+        sh 'mvn package -DskipTests'
     }
 }
