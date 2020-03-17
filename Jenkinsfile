@@ -1,9 +1,7 @@
 node{
     stage('SCM Checkout'){
         steps{
-            git checkout 'Dev'
-            git 'https://github.com/GuilleRdz/MAVEN-Project'
-        }
+            git 'https://github.com/GuilleRdz/MAVEN-Project/tree/Dev'
     }
     stage('Compile-Package'){
         sh 'mvn package'
