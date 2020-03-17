@@ -17,8 +17,10 @@ agent any
             when {
                 branch 'Dev'
             }
-            git: credentialsId: 'mavn-pj',
-                url: 'https://github.com/GuilleRdz/MAVEN-Project'
+            stage{
+                echo 'Delivery...
+            }
+            
         }
         stage('Deploy for Prod'){
             when{
