@@ -18,16 +18,15 @@ pipeline{
             when {
                 branch 'Dev'
             }
-            stage{
+            steps{
                 echo 'Delivery...'
             }
-            
         }
         stage('Deploy for Prod'){
             when{
                 branch 'master'
             }
-            stage{
+            steps{
                 echo 'Deploying...'
             }
         }
