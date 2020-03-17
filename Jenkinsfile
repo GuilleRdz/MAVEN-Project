@@ -4,7 +4,7 @@ pipeline {
         stage('Build'){
             steps{
                 /* BuildApplication */
-                sh 'cd MAVENProject'
+                sh 'cd ~/MAVENProject'
                 sh 'mvn clean install -e -DskipTests'
             }
         }
