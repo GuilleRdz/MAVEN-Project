@@ -1,5 +1,4 @@
-pipeline{
-    agent any
+node{
     stage('SCM Checkout'){
         git checkout 'Dev'
         git 'https://github.com/GuilleRdz/MAVEN-Project'
