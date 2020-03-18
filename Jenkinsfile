@@ -1,20 +1,36 @@
 pipeline{
     agent any
     stages{
-        stage('Build'){
-            steps{
-                sh 'mvn package -DskipTests'
+        stage('Maven Lifecycle'){
+            stages{
+                stage('Validate'){
+                    steps{
+                        sh 'mvn validate'
+                    }
+                }
+                stage('Clean'){
+                    steps{
+                        sh 'mvn clean'
+                    }
+                }
+                stage('Unit Test'){
+                    steps{
+                        sh 'mvn Test'
+                    }
+                }
             }
         }
-        stage('Unit Test'){
-            steps{
-                /*sh 'mvn test'*/
-                echo 'Unit test...'
+        stage('Static Analysis') {
+            environment {
+                scannerHome = tool 'SonarQubeScanner'
             }
-        }
-        stage('Static Analysis'){
-            steps{
-                echo 'SonarQube'
+            steps {
+                withSonarQubeEnv('SonarCloud') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
+                timeout(time: 1, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
             }
         }
         stage('Delivery on Dev'){
