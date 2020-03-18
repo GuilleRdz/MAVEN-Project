@@ -2,7 +2,9 @@ pipeline{
     agent any
     stages{
         stage('Deploy'){
-        echo 'Deploy'
+            steps{
+                echo 'Deploy'
+            }
         }
         stage('Sonarqube') {
             environment {
