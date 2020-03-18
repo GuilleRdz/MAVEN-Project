@@ -15,7 +15,7 @@ pipeline{
                 }
                 stage('Lint Report'){
                     steps{
-                        sh 'mvn site -Dmaven.test.skip=true'
+                        echo 'Lint'
                     }
                 }
                 stage('Unit Test'){
