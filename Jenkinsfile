@@ -13,6 +13,11 @@ pipeline{
                         sh 'mvn clean'
                     }
                 }
+                stage('Lint Report){
+                    steps{
+                        sh 'mvn site'
+                    }
+                }
                 stage('Unit Test'){
                     steps{
                         sh 'mvn test'
