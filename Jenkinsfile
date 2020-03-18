@@ -3,7 +3,6 @@ pipeline{
     stages{
         stage('Maven Lifecycle'){
             parallel{
-                stages{
                 stage('Validate'){
                     steps{
                         sh 'mvn validate'
@@ -19,7 +18,6 @@ pipeline{
                         sh 'mvn Test'
                     }
                 }
-            }
             }
         }
         stage('Static Analysis') {
