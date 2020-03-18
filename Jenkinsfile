@@ -16,5 +16,10 @@ pipeline{
                 }        
             }
         }
+        stage('Deploy II'){
+            steps{
+                echo 'Despues de Sonar'
+            }
+        }
     }
 }
