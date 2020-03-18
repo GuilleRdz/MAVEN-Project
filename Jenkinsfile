@@ -12,7 +12,7 @@ pipeline{
             }    
             steps {
                 withSonarQubeEnv(credentialsId:'sonar-cloud', installationName:'SonarCloud',) {
-                    echo 'Hola'
+                    sh "${scannerHome}/bin/sonar-scanner"
                 }        
             }
         }
