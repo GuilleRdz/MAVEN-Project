@@ -15,7 +15,7 @@ pipeline{
                 }
                 stage('Lint Report'){
                     steps{
-                        echo 'Lint'
+                        sh 'mvn checkstyle:checkstyle'
                     }
                 }
                 stage('Unit Test'){
