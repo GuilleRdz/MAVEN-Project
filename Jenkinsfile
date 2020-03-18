@@ -2,7 +2,8 @@ pipeline{
     agent any
     stages{
         stage('Maven Lifecycle'){
-            stages{
+            parallel{
+                stages{
                 stage('Validate'){
                     steps{
                         sh 'mvn validate'
@@ -15,9 +16,10 @@ pipeline{
                 }
                 stage('Unit Test'){
                     steps{
-                        sh 'mvn test'
+                        sh 'mvn Test'
                     }
                 }
+            }
             }
         }
         stage('Static Analysis') {
