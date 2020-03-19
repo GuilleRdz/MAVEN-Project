@@ -58,7 +58,6 @@
                </descriptorRefs>
             </configuration>
          </plugin>
-          <plugins>
          <plugin>
            <groupId>org.apache.maven.plugins</groupId>
            <artifactId>maven-checkstyle-plugin</artifactId>
@@ -69,10 +68,8 @@
                  <violationSeverity>error</violationSeverity>
                  <failOnViolation>false</failOnViolation>
                  <failsOnError>false</failsOnError>
-                 <logViolationsToConsole>false</logViolationsToConsole>
              </configuration>
          </plugin>
-    </plugins>
       </plugins>
    </build>
    <reporting>
