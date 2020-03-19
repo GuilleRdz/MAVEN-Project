@@ -15,6 +15,11 @@ pipeline{
             steps{
                 sh 'mvn checkstyle:check'
             }
+            post {
+                always {
+                    junit 'build/reports/**/*.xml'
+                }
+            }
         }
         stage('Unit Test'){
             steps{
@@ -49,11 +54,6 @@ pipeline{
             }
             steps{
                 echo 'Deploying...'
-            }
-        }
-        post {
-            always {
-                junit 'build/reports/**/*.xml'
             }
         }
     }
