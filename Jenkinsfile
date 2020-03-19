@@ -11,9 +11,9 @@ pipeline{
                 sh 'mvn clean'
             }
         }
-        stage('Lint Report'){
+        stage('Lint Code'){
             steps{
-                sh 'mvn checkstyle:check -e'
+                sh 'mvn checkstyle:check'
             }
         }
         stage('Unit Test'){
