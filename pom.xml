@@ -70,7 +70,8 @@
                  <configLocation>google_checks.xml</configLocation>
                  <consoleOutput>true</consoleOutput>
                  <violationSeverity>error</violationSeverity>
-                 <failOnViolation>false</failOnViolation>
+                 <failOnViolation>true</failOnViolation>
+                 <failsOnError>true</failsOnError>
              </configuration>
          </plugin>
     </plugins>
