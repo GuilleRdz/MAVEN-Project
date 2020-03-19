@@ -13,7 +13,7 @@ pipeline{
         }
         stage('Lint Report'){
             steps{
-                sh 'mvn checkstyle:check'
+                sh 'mvn checkstyle:check -e'
             }
             post {
                 always {
