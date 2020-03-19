@@ -37,7 +37,7 @@ public class Convert {
                     if (result == 0) {
                         zero = true;
                     } else if (zero) {
-                        return ("Invalid");
+                        return "Invalid";
                     } else {
                         cidr++;
                     }
@@ -46,7 +46,7 @@ public class Convert {
             }
             return String.valueOf(cidr);
         } catch (UnknownHostException e) {
-            return("Invalid");
+            return "Invalid";
         }
         
     }

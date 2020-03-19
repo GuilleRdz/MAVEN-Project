@@ -1,5 +1,6 @@
 package com.wizeline;
 import static com.wizeline.Convert.*;
+import java.net.UnknownHostException;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -35,7 +36,7 @@ public class ConvertTest extends TestCase
       assertEquals("255.255.255.255", Convert.cidrToMask("32"));
     }
 
-    public void testValidMaskToCidr()
+    public void testValidMaskToCidr() throws UnknownHostException
     {
       assertEquals("1", Convert.maskToCidr("128.0.0.0"));
       assertEquals("16", Convert.maskToCidr("255.255.0.0"));
@@ -51,7 +52,7 @@ public class ConvertTest extends TestCase
       assertTrue(Convert.ipv4Validation("255.255.255.255"));
     }
 
-    public void testInvalidMaskToCidr()
+    public void testInvalidMaskToCidr() throws UnknownHostException
     {
       assertEquals("Invalid", Convert.maskToCidr("0.0.0.0"));
       assertEquals("Invalid", Convert.maskToCidr("-1"));
