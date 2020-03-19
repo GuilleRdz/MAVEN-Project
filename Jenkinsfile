@@ -1,29 +1,26 @@
 pipeline{
     agent any
     stages{
-        stage('Maven Lifecycle'){
-            stages{
-                stage('Validate'){
-                    steps{
-                        sh 'mvn validate'
-                    }
-                }
-                stage('Clean'){
-                    steps{
-                        sh 'mvn clean'
-                    }
-                }
-                stage('Lint Report'){
-                    steps{
-                        sh 'mvn checkstyle:checkstyle'
-                    }
-                }
-                stage('Unit Test'){
-                    steps{
-                        sh 'mvn test'
-                    }
-                }
+        stage('Validate'){
+            steps{
+                sh 'mvn validate'
             }
+        }
+        stage('Clean'){
+            steps{
+                sh 'mvn clean'
+            }
+        }
+        stage('Lint Report'){
+            steps{
+                sh 'mvn checkstyle:checkstyle'
+            }
+        }
+        stage('Unit Test'){
+            steps{
+                sh 'mvn test'
+        }
+
         }
         stage('Static Analysis') {
             environment {
