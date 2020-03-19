@@ -13,7 +13,7 @@ pipeline{
         }
         stage('Lint Report'){
             steps{
-                sh 'mvn checkstyle:checkstyle'
+                sh 'mvn checkstyle:check'
             }
         }
         stage('Unit Test'){
