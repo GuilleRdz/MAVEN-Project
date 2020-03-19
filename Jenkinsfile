@@ -15,11 +15,6 @@ pipeline{
             steps{
                 sh 'mvn checkstyle:check -e'
             }
-            post {
-                always {
-                    junit 'build/reports/**/*.xml'
-                }
-            }
         }
         stage('Unit Test'){
             steps{
