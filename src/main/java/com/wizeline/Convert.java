@@ -24,6 +24,8 @@ public class Convert {
     }
 
     public static String maskToCidr(String maskNetwork) throws UnknownHostException {
+        if(maskNetwork.equals("0.0.0.0"))
+            return "Invalid";
         try {
             InetAddress netmask = InetAddress.getByName(maskNetwork);
             byte[] netmaskBytes = netmask.getAddress();
