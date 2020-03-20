@@ -52,7 +52,7 @@ pipeline{
                                     username: "$USER",
                                     encryptedPassphrase: "$PASSWD"
                                 ],
-                                transfer: [
+                                transfers: [
                                     sshTransfer(
                                         sourceFiles:'var/lib/jenkins/workspace/MAVEN-Project_Dev/',
                                         removePrefix: '/var/lib/jenkins/workspace/',
