@@ -27,12 +27,13 @@ pipeline{
                 scannerHome = tool 'SonarQubeScanner'
             }
             steps {
-                withSonarQubeEnv('SonarCloud') {
+                /*withSonarQubeEnv('SonarCloud') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
                 timeout(time: 1, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
-                }
+                }*/
+                echo 'Testing on Delivery'
             }
         }
         stage('Delivery on Dev'){
