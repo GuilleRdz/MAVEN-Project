@@ -41,7 +41,7 @@ pipeline{
                 branch 'Dev'
             }
             steps{
-                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USER')]){
+                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USER', passwordVariable: 'PASS')]){
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
@@ -50,6 +50,7 @@ pipeline{
                                 configName: 'developmentenv',
                                 sshCredentials: [
                                     username: "$USER",
+                                    encryptesPassphrase: ''
                                 ],
                                 transfers: [
                                     sshTransfer(
