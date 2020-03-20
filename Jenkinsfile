@@ -50,7 +50,7 @@ pipeline{
                                 configName: 'developmentenv',
                                 sshCredentials: [
                                     username: "$USER",
-                                    password: "$PASS"
+                                    password: "$PASS",
                                     encryptesPassphrase: ''
                                 ],
                                 transfers: [
