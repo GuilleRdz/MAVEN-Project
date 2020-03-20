@@ -51,7 +51,9 @@ public class Convert {
         
     }
 
-    public static Boolean ipv4Validation(String x) {
-        return true;
+    public static Boolean ipv4Validation(String ipv4) {
+        String PATTERN = "^((0|1\\d?\\d?|2[0-4]?\\d?|25[0-5]?|[3-9]\\d?)\\.){3}(0|1\\d?\\d?|2[0-4]?\\d?|25[0-5]?|[3-9]\\d?)$";
+        
+        return ipv4.matches(PATTERN);
     }
 }
